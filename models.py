@@ -1,7 +1,7 @@
-from flask import flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
-from passlib.apps import custom_app_context as pwd_context
+#from passlib.apps import custom_app_context as pwd_context
 
 
 app = Flask(__name__)
@@ -20,9 +20,6 @@ class User(db.Model):
     email = db.Column(db.String(64))
     passhash = db.Column(db.String(128))
     favTeam = db.Column(db.String(8))
-
-
-
 
 
 
