@@ -40,6 +40,11 @@ def standings():
 
     return jsonify(standings)
 
+@app.route("/ballers/api/team/<team>")
+def team(team):
+    stats = msf.msf_get_data(league = 'mlb', feed = 'seasonal_team_stats', season = 'current', format = 'json', team = team)
+
+    return jsonify(stats['teamStatsTotals'])
 
 if __name__ == '__main__':
     app.run(debug=True)
