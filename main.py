@@ -16,10 +16,7 @@ def scores(date):
     cleaned_scores = get_scores(daily_scores['games'])
 
 
-    with open('templates/temp.json', 'w') as t:
-        json.dump(cleaned_scores, t)
-
-    return render_template('temp.json')
+    return jsonify(cleaned_scores)
 
 @app.route("/ballers/api/stats")
 def stats():
@@ -33,10 +30,7 @@ def stats():
         val = {each : get_stat(stats['playerStatsTotals'],each) }
         allStat.append(val)
 
-    with open('templates/temp.json', 'w') as t:
-        json.dump(allStat, t)
-
-    return render_template('temp.json')
+    return jsonify(allStat)
 
 @app.route("/ballers/api/standings")
 def standings():
@@ -44,10 +38,7 @@ def standings():
 
     standings = get_standings(standings['teams'])
 
-    with open('templates/temp.json', 'w') as t:
-        json.dump(standings, t)
-
-    return render_template('temp.json')
+    return jsonify(standings)
 
 
 if __name__ == '__main__':

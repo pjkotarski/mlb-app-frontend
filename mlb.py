@@ -101,8 +101,6 @@ def get_stat(all, stat):
 
                 top.append([eachPlayer['player']['firstName'], eachPlayer['player']['lastName'], eachPlayer['stats'][mod][stat]])
 
-                print('this')
-
             else:
 
                 for place in range(len(top)):
